@@ -3,6 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Public_Sans } from 'next/font/google';
 
+import { Provider } from "@/components/ui/provider"
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -25,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${publicSans.variable} ${inter.variable}`}>{children}</body>
+      <body className={`${publicSans.variable} ${inter.variable}`}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
